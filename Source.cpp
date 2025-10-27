@@ -8,6 +8,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <string>
 using namespace std;
 //prototype
 
@@ -16,11 +17,20 @@ int convertRomanToInt(string s);
 
 //global variable
 
-string input = "MCMLXVIII";
+string input;
 
 int main(void) {
 
-    cout << "Roman Numeral Value Equals: " << convertRomanToInt(input) << endl;
+
+    while (true) {
+        cout << "Enter Roman number or Q to quit: ";
+        getline(cin, input);
+        if (input == "Q") break;
+
+
+        cout << input << " = " << convertRomanToInt(input) << endl;
+    }
+
     return 0;
 
 }
